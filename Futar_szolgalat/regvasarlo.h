@@ -15,8 +15,9 @@ public:
 	void menuListaz() const;
 	const string& kiir() const;
 	void setTelefon(const string& _telefon);
-	void setVNev(const string& _vNev);
-	void setLakcim(const string& _kNev);
+	void setvNev(const string& _vNev);
+ 	void setkNev(const string& _kNev);
+	void setLakcim(const string& _lakcim);
 	void kosarMegjelenit() const;
 	void rendeles();
 	void rendelesInditas();

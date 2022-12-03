@@ -10,6 +10,11 @@ RegVasarlo::RegVasarlo():Felhasznalo()
 
 void RegVasarlo::regisztracio(const string& email, const string& jelszo, const string& telefon, const string& vNev, const string& kNev, const string& lakcim)
 {
+	Felhasznalo::regisztracio(email, jelszo);
+	setTelefon(telefon);
+	setvNev(vNev);
+	setkNev(kNev);
+	setLakcim(lakcim);
 }
 
 void RegVasarlo::menuListaz() const
@@ -23,14 +28,22 @@ const string& RegVasarlo::kiir() const
 
 void RegVasarlo::setTelefon(const string& _telefon)
 {
+	telefon = _telefon;
 }
 
-void RegVasarlo::setVNev(const string& _vNev)
+void RegVasarlo::setvNev(const string& _vNev)
 {
+	vNev = _vNev;
 }
 
-void RegVasarlo::setLakcim(const string& _kNev)
+void RegVasarlo::setkNev(const string& _kNev)
 {
+	kNev = _kNev;
+}
+
+void RegVasarlo::setLakcim(const string& _lakcim)
+{
+	lakcim = _lakcim;
 }
 
 void RegVasarlo::kosarMegjelenit() const
