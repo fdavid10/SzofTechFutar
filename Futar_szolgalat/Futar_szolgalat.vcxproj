@@ -127,7 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="etterem.cpp" />
+    <ClCompile Include="felhasznalo.cpp" />
+    <ClCompile Include="felhasznalotarolo.cpp" />
+    <ClCompile Include="futar.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="regvasarlo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="etterem.h" />
+    <ClInclude Include="felhasznalo.h" />
+    <ClInclude Include="felhasznalotarolo.h" />
+    <ClInclude Include="futar.h" />
+    <ClInclude Include="regvasarlo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

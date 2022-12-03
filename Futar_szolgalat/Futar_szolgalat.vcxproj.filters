@@ -18,5 +18,37 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="felhasznalo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="felhasznalotarolo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="regvasarlo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="futar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="etterem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="felhasznalo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="felhasznalotarolo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="regvasarlo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="futar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="etterem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
