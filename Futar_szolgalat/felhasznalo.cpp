@@ -36,6 +36,7 @@ void Felhasznalo::kereses() const
         cout << "Kerem adja meg a keresni kivant kifejezest: ";
         string kifejezes = "";
         cin >> kifejezes;
+        cout << endl;
 
         ifstream inputFajl("ettermek.txt");
         if (inputFajl.is_open())
@@ -48,9 +49,9 @@ void Felhasznalo::kereses() const
                 istringstream iss(sor);
                 bool bMapKey = false;
                 string mapKey, mapValue;
-                while (getline(iss, elem, ';'))
+                while (getline(iss, elem, ','))
                 {
-                    if (bMapKey == false)
+                    if (!bMapKey)
                     {
                         mapKey = elem;
                         bMapKey = true;
@@ -65,25 +66,31 @@ void Felhasznalo::kereses() const
             
             inputFajl.close();
 
+            int index = 1;
             for (auto i : inputMap)
             {
                 if (keresesiFelt == 1)
                 {
                     if (kifejezes == i.first)
                     {
-                        cout << i.first << " (" << i.second << ")" << endl;
+                        cout << index << ". " << i.first << " (" << i.second << ")" << endl;
+                        index++;
                     }
                 }
                 if (keresesiFelt == 2)
                 {
-                    //cout << (kifejezes == i.second) << i.first;
                     if (kifejezes == i.second)
                     {
-                        cout << i.first << endl;
+                        cout << index << ". " << i.first << endl;
+                        index++;
                     }
                 }
             }
-            
+            if (index == 1)
+            {
+                cout << "A keresett elem nem talalhato\nNyomjon meg egy gombot a visszalepeshez!" << endl;
+            }
+            cout << endl << endl;
         }
         else cout << "Baj az etteremek.txt megnyitasakor!";
     }
