@@ -1,15 +1,21 @@
 #include "felhasznalo.h"
 #include "felhasznalotarolo.h"
+#include "regvasarlo.h"
+#include "futar.h"
+#include "etterem.h"
 #include <iostream>
 #include <list>
 
 using namespace std;
 
-int main()
-{
-	FelhasznaloTarolo tarolo = FelhasznaloTarolo();
-    Felhasznalo felhasznalo = Felhasznalo();
+FelhasznaloTarolo tarolo = FelhasznaloTarolo();
+Felhasznalo felhasznalo;
+
+
+void vendegNezet() {
+
 	int input = 0;
+	bool belep = false;
 	do
 	{
 
@@ -37,7 +43,9 @@ int main()
 			cout << endl << "Adja meg a jelszot: ";
 			string jelszo;
 			cin >> jelszo;
-			felhasznalo.belepes(email, jelszo);
+			felhasznalo = tarolo.belepes(email, jelszo);
+			belep = true;
+			input = 4;
 			break;
 		}
 		case 3: {
@@ -47,7 +55,67 @@ int main()
 		default:
 			break;
 		}
-	} while (input!=4);
+	} while (input != 4);
 
 }
+
+
+void regvasarloNezet() {
+
+	int input = 0;
+	do
+	{
+		RegVasarlo regvasarlo;
+		regvasarlo.regisztracio(felhasznalo.getEmail(), felhasznalo.getJelszo());
+		switch (input)
+		{
+		case 1: {
+			regvasarlo.kereses();
+			break;
+		}
+		case 2: {
+			regvasarlo.rendelesInditas();
+			break;
+		}
+		case 3: {
+			regvasarlo.kosarMegjelenit();
+			break;
+		}
+		case 4: {
+			regvasarlo.profilModositas();
+			break;
+		}
+		case 5: {
+			regvasarlo.profilTorles();
+			break;
+		}
+		default:
+			break;
+		}
+
+	} while (input != 6);
+}
+
+
+
+
+int main()
+{
+	int input = 0;
+	do
+	{
+		vendegNezet();
+		if (felhasznalo.getTipus() == "regvasarlo")
+		{
+			regvasarloNezet();
+		}
+		cin >> input;
+	} while (input != 4);
+
+
+
+}
+
+
+
 

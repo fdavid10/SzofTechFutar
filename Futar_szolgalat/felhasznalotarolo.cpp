@@ -8,9 +8,25 @@ void FelhasznaloTarolo::felhasznaloHozzaad(const Felhasznalo& f)
 	felhasznalok.push_back(f);
 }
 
-void FelhasznaloTarolo::felhasznaloBeolvas() const
+void FelhasznaloTarolo::felhasznaloBeolvas()
 {
-	
+	for (auto& i : felhasznalok)
+	{
+		ifstream beolvas;
+		beolvas.open("felhasznalok.txt");
+
+		while (beolvas.is_open())
+		{
+			char sor[] = " ";
+			beolvas >> sor;
+
+			/*string tipus = strtok(sor, ",");
+			string email = strtok(NULL, ",");
+			string jelszo = strtok(NULL, ",");
+			Felhasznalo f = Felhasznalo(tipus, email, jelszo);
+			felhasznaloHozzaad(f);*/ // javítás alatt
+		}
+	}
 }
 
 void FelhasznaloTarolo::felhasznaloFajlbairas()
@@ -33,10 +49,41 @@ Felhasznalo FelhasznaloTarolo::getFelhasznalo() const
 	return Felhasznalo();
 }
 
- void etteremListaz(const string& nev, const string &kategoria)
- {
- }
+list<Felhasznalo> FelhasznaloTarolo::getFelhasznalok() const
+{
+	return felhasznalok;
+}
 
- void profilModositas(const string& email) 
- {
- }
+void FelhasznaloTarolo::etteremListaz(const string& nev, const string& kategoria)
+{
+}
+
+void FelhasznaloTarolo::profilModositas(const string& email)
+{
+}
+
+Felhasznalo FelhasznaloTarolo::belepes(const string& email, const string& jelszo)
+{
+	for (auto& i : felhasznalok)
+	{
+		if (i.getEmail() == email)
+		{
+			if (i.getJelszo() == jelszo)
+			{
+				return i;
+			}
+			else
+			{
+				throw 0; //rendes kivetel kezeles implenetalasa kesobb 
+			}
+		}
+	}
+}
+
+void etteremListaz(const string& nev, const string& kategoria)
+{
+}
+
+void profilModositas(const string& email)
+{
+}

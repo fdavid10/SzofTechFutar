@@ -2,15 +2,23 @@
 
 Felhasznalo::Felhasznalo()
 {
-	jelszo = "";
-	email = "";
+    jelszo = "";
+    email = "";
 }
 
-Felhasznalo::Felhasznalo(const string& email, const string& jelszo):
+Felhasznalo::Felhasznalo(const string& email, const string& jelszo) :
     email(email),
     jelszo(jelszo)
 {
 }
+
+Felhasznalo::Felhasznalo(const string& tipus, const string& email, const string& jelszo) :
+    email(email),
+    jelszo(jelszo),
+    tipus(tipus)
+{
+}
+
 
 
 void Felhasznalo::regisztracio(const string& email, const string& jelszo)
@@ -19,15 +27,10 @@ void Felhasznalo::regisztracio(const string& email, const string& jelszo)
     setJelszo(jelszo);
 }
 
-void Felhasznalo::belepes(const string& email, const string& jelszo)
-{
-    
-}
-
 void Felhasznalo::kereses() const
 {
     system("cls");
-    cout << "Mi alapján keres?\n  1. ettermek neve\n  2. etteremek kategoriaja\n  3. megsem\n" << endl;
+    cout << "Mi alapjan keres?\n  1. ettermek neve\n  2. etteremek kategoriaja\n  3. megsem\n" << endl;
     int keresesiFelt = 3;
     cin >> keresesiFelt;
 
@@ -63,7 +66,7 @@ void Felhasznalo::kereses() const
                 }
                 inputMap[mapKey] = mapValue;
             }
-            
+
             inputFajl.close();
 
             int index = 1;
@@ -98,8 +101,8 @@ void Felhasznalo::kereses() const
 
 void Felhasznalo::menuListaz() const
 {
-	cout << "1.) Regisztracio" << endl;
-	cout << "2.) Belepes" << endl;
+    cout << "1.) Regisztracio" << endl;
+    cout << "2.) Belepes" << endl;
     cout << "3.) Kereses" << endl;
     cout << "4.) Kilepes" << endl;
 }
@@ -111,11 +114,27 @@ void Felhasznalo::setEmail(const string& _email)
 
 void Felhasznalo::setJelszo(const string& _jelszo)
 {
-	jelszo = _jelszo;
+    jelszo = _jelszo;
+}
+
+const string& Felhasznalo::getEmail() const
+{
+    return email;
+}
+
+const string& Felhasznalo::getJelszo() const
+{
+    return jelszo;
+}
+
+const string& Felhasznalo::getTipus() const
+{
+    return tipus;
 }
 
 const string& Felhasznalo::kiir() const
 {
-    return email + " " + jelszo;
+    return "";
 }
+
 

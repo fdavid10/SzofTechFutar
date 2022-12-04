@@ -1,6 +1,6 @@
 #include "regvasarlo.h"
 
-RegVasarlo::RegVasarlo():Felhasznalo()
+RegVasarlo::RegVasarlo() :Felhasznalo()
 {
 	telefon = "";
 	vNev = "";
@@ -8,22 +8,23 @@ RegVasarlo::RegVasarlo():Felhasznalo()
 	lakcim = "";
 }
 
-void RegVasarlo::regisztracio(const string& email, const string& jelszo, const string& telefon, const string& vNev, const string& kNev, const string& lakcim)
+void RegVasarlo::regisztracio(const string& email, const string& jelszo)
 {
 	Felhasznalo::regisztracio(email, jelszo);
-	setTelefon(telefon);
-	setvNev(vNev);
-	setkNev(kNev);
-	setLakcim(lakcim);
 }
 
 void RegVasarlo::menuListaz() const
 {
+	cout << "1.) Kereses" << endl;
+	cout << "2.) Belepes" << endl;
+	cout << "3.) Kosar megtekintese" << endl;
+	cout << "4.) Profil modositasa" << endl;
+	cout << "5.) Profil torlese" << endl;
+	cout << "6.) Kilepes" << endl;
 }
 
 const string& RegVasarlo::kiir() const
 {
-	// TODO: insert return statement here
 	return "";
 }
 
@@ -60,6 +61,14 @@ void RegVasarlo::rendelesInditas()
 }
 
 void RegVasarlo::kosarHozzaad(int index)
+{
+}
+
+void RegVasarlo::profilModositas()
+{
+}
+
+void RegVasarlo::profilTorles()
 {
 }
 
