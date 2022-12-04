@@ -141,6 +141,10 @@
     <ClInclude Include="futar.h" />
     <ClInclude Include="regvasarlo.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="ettermek.txt" />
+    <Text Include="felhasznalok.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

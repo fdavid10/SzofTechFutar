@@ -1,0 +1,5 @@
+McDonald's,gyors
+KFC,gyors
+Finom Pizza,olasz
+Lucifer Pizzeria,olasz
+Burger King,gyors

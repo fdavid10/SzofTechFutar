@@ -2,6 +2,9 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <list>
+#include <map>
+#include <sstream>  
 //#include "felhasznalotarolo.h"
 
 using namespace std;

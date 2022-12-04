@@ -24,6 +24,7 @@ void RegVasarlo::menuListaz() const
 const string& RegVasarlo::kiir() const
 {
 	// TODO: insert return statement here
+	return "";
 }
 
 void RegVasarlo::setTelefon(const string& _telefon)
