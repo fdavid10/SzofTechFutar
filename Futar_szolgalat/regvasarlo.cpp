@@ -137,7 +137,7 @@ void RegVasarlo::profilTorles()
 void RegVasarlo::profilFajlbairas() const
 {
 	ofstream fajl;
-	fajl.open(email + "profil.txt");
+	fajl.open(email + "_profil.txt");
 	fajl << telefon << "," << vNev << "," << kNev << "," << lakcim;
 	fajl << endl;
 	fajl.close();
