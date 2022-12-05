@@ -1,31 +1,22 @@
 #include "felhasznalotarolo.h"
 
 FelhasznaloTarolo::FelhasznaloTarolo()
-{}
+{
+}
 
 void FelhasznaloTarolo::felhasznaloHozzaad(const Felhasznalo& f)
 {
 	felhasznalok.push_back(f);
 }
 
+static list<list<string>> felhasznaloLista = Felhasznalo::getFajl("felhasznalok.txt");
 void FelhasznaloTarolo::felhasznaloBeolvas()
 {
-	for (auto& i : felhasznalok)
-	{
-		ifstream beolvas;
-		beolvas.open("felhasznalok.txt");
-
-		while (beolvas.is_open())
-		{
-			char sor[] = " ";
-			beolvas >> sor;
-
-			/*string tipus = strtok(sor, ",");
-			string email = strtok(NULL, ",");
-			string jelszo = strtok(NULL, ",");
-			Felhasznalo f = Felhasznalo(tipus, email, jelszo);
-			felhasznaloHozzaad(f);*/ // javítás alatt
-		}
+	for(auto l : felhasznaloLista){
+		vector<string> f(l.begin(),l.end());
+		cout << f[0] << " - " << f[1] << " - " << f[2] << endl;
+		Felhasznalo felhasznalo(f[0], f[1], f[2]);
+		felhasznaloHozzaad(felhasznalo);
 	}
 }
 

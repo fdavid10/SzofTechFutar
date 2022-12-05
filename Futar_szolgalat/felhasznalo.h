@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <list>
-#include <map>
+#include <vector>
 #include <sstream> 
 
 using namespace std;
@@ -26,6 +26,9 @@ public:
 	const string& getEmail() const;
 	const string& getJelszo() const;
 	const string& getTipus() const;
-	virtual const string& kiir() const;
+	const string& kiir() const;
 	~Felhasznalo() {};
+
+	static list<list<string>> getFajl(const string& fajlNev);
+	//vector<string> sorVisszaAd(const string& fajlNev, const string& keresettSor) const;
 };

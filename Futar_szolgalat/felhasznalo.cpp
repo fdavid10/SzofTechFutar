@@ -13,9 +13,9 @@ Felhasznalo::Felhasznalo(const string& email, const string& jelszo) :
 }
 
 Felhasznalo::Felhasznalo(const string& tipus, const string& email, const string& jelszo) :
+	tipus(tipus),
     email(email),
-    jelszo(jelszo),
-    tipus(tipus)
+    jelszo(jelszo)
 {
 }
 
@@ -40,62 +40,38 @@ void Felhasznalo::kereses() const
         string kifejezes = "";
         cin >> kifejezes;
         cout << endl;
+       
+        list<list<string>> ettermekLista = getFajl("ettermek.txt");
 
-        ifstream inputFajl("ettermek.txt");
-        if (inputFajl.is_open())
+        int index = 1;
+        for (auto& l_sor : ettermekLista)
         {
-            string sor;
-            map<string, string> inputMap;
-            while (getline(inputFajl, sor))
-            {
-                string elem;
-                istringstream iss(sor);
-                bool bMapKey = false;
-                string mapKey, mapValue;
-                while (getline(iss, elem, ','))
-                {
-                    if (!bMapKey)
-                    {
-                        mapKey = elem;
-                        bMapKey = true;
-                    }
-                    else
-                    {
-                        mapValue = elem;
-                    }
-                }
-                inputMap[mapKey] = mapValue;
-            }
-
-            inputFajl.close();
-
-            int index = 1;
-            for (auto i : inputMap)
+            for (auto it = l_sor.begin(); it != l_sor.end(); it++)
             {
                 if (keresesiFelt == 1)
                 {
-                    if (kifejezes == i.first)
+                  
+                    //iterator<list<list string>> asd = ettermekLista.begin();
+                    if (kifejezes == *it)
                     {
-                        cout << index << ". " << i.first << " (" << i.second << ")" << endl;
+                        auto teszt = it;
+                        teszt++;
+                        cout << " " << index << ". " << *it << " (" << *teszt << ")" << endl;
                         index++;
                     }
                 }
                 if (keresesiFelt == 2)
                 {
-                    if (kifejezes == i.second)
+                    if (kifejezes == *it)
                     {
-                        cout << index << ". " << i.first << endl;
+                        auto teszt = it;
+                        teszt--;
+                        cout << " " << index << ". " << *teszt << endl;
                         index++;
                     }
                 }
             }
-            if (index == 1)
-            {
-                cout << "A keresett elem nem talalhato\nNyomjon meg egy gombot a visszalepeshez!" << endl;
-            }
-            cout << endl << endl;
         }
-        else cout << "Baj az etteremek.txt megnyitasakor!";
     }
 }
 
@@ -134,7 +110,71 @@ const string& Felhasznalo::getTipus() const
 
 const string& Felhasznalo::kiir() const
 {
-    return "";
+    return tipus + " " + email + " " + jelszo;
 }
 
 
+list<list<string>> Felhasznalo::getFajl(const string& fajlNev)
+{
+    list<list<string>> fajl;
+    ifstream inputFajl(fajlNev);
+    if (inputFajl.is_open())
+    {
+
+        string sor;
+        while (getline(inputFajl, sor))
+        {
+            list<string> fajlSor;
+            string elem;
+            list<string> lista;
+            istringstream iss(sor);
+            while (getline(iss, elem, ',')) // mindehol vesszovel splitelunk!
+            {
+                fajlSor.push_back(elem);
+            }
+            fajl.push_back(fajlSor);
+        }
+        inputFajl.close();
+    }
+    else cout << "Baj az input fajl meg megnyitasakor!";
+    return fajl;
+}
+
+/*vector<string> Felhasznalo::sorVisszaAd(const string& fajlNev, const string& keresettSor) const
+{
+    list<list<string>> fajl = getFajl(fajlNev);
+    vector<string> aSor;
+
+    string elem;
+    istringstream iss(keresettSor);
+    while (getline(iss, elem, ','))
+    {
+        aSor.push_back(elem);
+    }
+    bool megtalaltSor = false;
+    for (auto& l : fajl)
+    {
+        int index = 0;
+        bool megJo = true;
+        for (auto it = l.begin(); it != l.end(); it++)
+        {
+            if (*it != aSor[index])
+            {
+                megJo = false;
+            }
+        }
+
+        if (megJo)
+        {
+            megtalaltSor = true;
+            break;
+        }
+        index++;
+    }
+
+    if (megtalaltSor)
+    {
+        return aSor;
+    }
+    return vector<string>();
+}*/

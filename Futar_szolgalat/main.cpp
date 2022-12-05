@@ -104,11 +104,16 @@ int main()
 	int input = 0;
 	do
 	{
-		vendegNezet();
+		tarolo.felhasznaloBeolvas();
+		list<Felhasznalo> teszt = tarolo.getFelhasznalok();
+		for(auto i : teszt){
+			cout << i.kiir() << endl;
+		}
+		/*vendegNezet();
 		if (felhasznalo.getTipus() == "regvasarlo")
 		{
 			regvasarloNezet();
-		}
+		}*/
 		cin >> input;
 	} while (input != 4);
 
