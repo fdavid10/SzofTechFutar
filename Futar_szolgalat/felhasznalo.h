@@ -27,7 +27,7 @@ public:
 	const string& getJelszo() const;
 	const string& getTipus() const;
 	virtual string kiir() const;
-	//~Felhasznalo() {};
+	~Felhasznalo() {};
 
 	static list<list<string>> getFajl(const string& fajlNev);
 	//vector<string> sorVisszaAd(const string& fajlNev, const string& keresettSor) const;

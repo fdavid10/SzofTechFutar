@@ -66,9 +66,87 @@ void RegVasarlo::kosarHozzaad(int index)
 
 void RegVasarlo::profilModositas()
 {
+	profilFajlbololvasas();
+	int input = 0;
+	do
+	{
+		cout << "Adja meg mit akar modositani";
+		cout << "1.) Telefon" << endl;
+		cout << "2.) Vezeteknev" << endl;
+		cout << "3.) Keresztnev" << endl;
+		cout << "4.) Lakcim" << endl;
+		cout << "5.) Kilepes" << endl;
+		cout << "A valasztasa: ";
+		cin >> input;
+
+		switch (input)
+		{
+		case 1: {
+			cout << endl << "Aktualis telefonszam: ";
+			cout << telefon;
+			cout << endl << "Adja meg a telefonszamot: ";
+			string tel;
+			cin >> tel;
+			setTelefon(tel);
+			break;
+		}
+		case 2: {
+			cout << endl << "Aktualis vezeteknev: ";
+			cout << vNev;
+			cout << endl << "Adja meg a vezeteknevet: ";
+			string vez;
+			cin >> vez;
+			setvNev(vez);
+			break;
+		}
+		case 3: {
+			cout << endl << "Aktualis keresztnev: ";
+			cout << kNev;
+			cout << endl << "Adja meg a keresztnevet: ";
+			string kez;
+			cin >> kez;
+			setkNev(kez);
+			break;
+		}
+		case 4: {
+			cout << endl << "Aktualis lakcim: ";
+			cout << lakcim;
+			cout << endl << "Adja meg a lakcimet";
+			string lak;
+			cin >> lak;
+			setLakcim(lak);
+			break;
+		}
+		default:
+			break;
+		}
+		profilFajlbairas();
+	} while (input!=5);
+
+
+
+
 }
 
 void RegVasarlo::profilTorles()
 {
+}
+
+
+
+void RegVasarlo::profilFajlbairas() const
+{
+	ofstream fajl;
+	fajl.open(email + "profil.txt");
+	fajl << telefon << "," << vNev << "," << kNev << "," << lakcim;
+	fajl << endl;
+	fajl.close();
+
+}
+
+static list<list<string>> felhasznaloLista = Felhasznalo::getFajl(Felhasznalo::getEmailStatic() + "profil.txt");
+void RegVasarlo::profilFajlbololvasas()
+{
+	
 }
 

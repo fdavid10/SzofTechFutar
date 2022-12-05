@@ -1,5 +1,6 @@
 #pragma once
 #include <list>
+#include <filesystem>
 #include "felhasznalo.h"
 
 class RegVasarlo : public Felhasznalo
@@ -25,5 +26,7 @@ public:
 	void kosarHozzaad(int index);
 	void profilModositas();
 	void profilTorles();
+	void profilFajlbairas() const;
+	void profilFajlbololvasas();
 };
 

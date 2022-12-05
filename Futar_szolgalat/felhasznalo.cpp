@@ -2,12 +2,13 @@
 
 Felhasznalo::Felhasznalo()
 {
-    /*jelszo = "";
-    email = "";*/
+    jelszo = "";
+    email = "";
 }
 Felhasznalo::Felhasznalo(const string& email, const string& jelszo):
     email(email),jelszo(jelszo)
 {
+    emailStatic = email;
 }
 
 Felhasznalo::Felhasznalo(const string& tipus, const string& email, const string& jelszo) :
@@ -15,6 +16,7 @@ Felhasznalo::Felhasznalo(const string& tipus, const string& email, const string&
     email(email),
     jelszo(jelszo)
 {
+    emailStatic = email;
 }
 
 void Felhasznalo::regisztracio(const string& email, const string& jelszo)
@@ -82,6 +84,7 @@ void Felhasznalo::menuListaz() const
 void Felhasznalo::setEmail(const string& _email)
 {
     email = _email;
+    emailStatic = _email;
 }
 
 void Felhasznalo::setJelszo(const string& _jelszo)
@@ -92,6 +95,12 @@ void Felhasznalo::setJelszo(const string& _jelszo)
 const string& Felhasznalo::getEmail() const
 {
     return email;
+}
+
+static string emailStatic;
+ string Felhasznalo::getEmailStatic()
+{
+     return emailStatic;
 }
 
 const string& Felhasznalo::getJelszo() const
