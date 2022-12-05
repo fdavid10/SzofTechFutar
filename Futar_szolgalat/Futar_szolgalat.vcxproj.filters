@@ -52,7 +52,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="felhasznalok.txt" />
-    <Text Include="ettermek.txt" />
+    <Text Include="felhasznalok.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ettermek.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -2,13 +2,11 @@
 
 Felhasznalo::Felhasznalo()
 {
-    jelszo = "";
-    email = "";
+    /*jelszo = "";
+    email = "";*/
 }
-
-Felhasznalo::Felhasznalo(const string& email, const string& jelszo) :
-    email(email),
-    jelszo(jelszo)
+Felhasznalo::Felhasznalo(const string& email, const string& jelszo):
+    email(email),jelszo(jelszo)
 {
 }
 
@@ -19,12 +17,11 @@ Felhasznalo::Felhasznalo(const string& tipus, const string& email, const string&
 {
 }
 
-
-
 void Felhasznalo::regisztracio(const string& email, const string& jelszo)
 {
     setEmail(email);
     setJelszo(jelszo);
+    tipus = "regvasarlo";
 }
 
 void Felhasznalo::kereses() const
@@ -51,7 +48,6 @@ void Felhasznalo::kereses() const
                 if (keresesiFelt == 1)
                 {
                   
-                    //iterator<list<list string>> asd = ettermekLista.begin();
                     if (kifejezes == *it)
                     {
                         auto teszt = it;
@@ -108,9 +104,9 @@ const string& Felhasznalo::getTipus() const
     return tipus;
 }
 
-const string& Felhasznalo::kiir() const
+string Felhasznalo::kiir() const
 {
-    return tipus + " " + email + " " + jelszo;
+    return tipus + " "  + email + " " + jelszo;
 }
 
 

@@ -1,11 +1,2 @@
-﻿  etterem.cpp
-  felhasznalo.cpp
-  felhasznalotarolo.cpp
-  futar.cpp
-  main.cpp
-  regvasarlo.cpp
-  Generating Code...
-C:\Users\david\source\repos\fdavid10\SzofTechFutar\Futar_szolgalat\regvasarlo.cpp(28): warning C4172: returning address of local variable or temporary
-C:\Users\david\source\repos\fdavid10\SzofTechFutar\Futar_szolgalat\felhasznalotarolo.cpp(77): warning C4715: 'FelhasznaloTarolo::belepes': not all control paths return a value
-C:\Users\david\source\repos\fdavid10\SzofTechFutar\Futar_szolgalat\felhasznalo.cpp(113): warning C4172: returning address of local variable or temporary
+﻿  main.cpp
   Futar_szolgalat.vcxproj -> C:\Users\david\Source\Repos\fdavid10\SzofTechFutar\x64\Debug\Futar_szolgalat.exe

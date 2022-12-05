@@ -23,9 +23,9 @@ void RegVasarlo::menuListaz() const
 	cout << "6.) Kilepes" << endl;
 }
 
-const string& RegVasarlo::kiir() const
+string RegVasarlo::kiir() const
 {
-	return "";
+	return  tipus + " " + email + " " + jelszo;
 }
 
 void RegVasarlo::setTelefon(const string& _telefon)

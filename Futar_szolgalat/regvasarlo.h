@@ -14,7 +14,7 @@ public:
 	RegVasarlo();
 	void regisztracio(const string& email, const string& jelszo);
 	void menuListaz() const;
-	const string& kiir() const;
+	string kiir() const;
 	void setTelefon(const string& _telefon);
 	void setvNev(const string& _vNev);
 	void setkNev(const string& _kNev);

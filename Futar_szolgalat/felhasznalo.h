@@ -26,7 +26,7 @@ public:
 	const string& getEmail() const;
 	const string& getJelszo() const;
 	const string& getTipus() const;
-	const string& kiir() const;
+	virtual string kiir() const;
 	//~Felhasznalo() {};
 
 	static list<list<string>> getFajl(const string& fajlNev);

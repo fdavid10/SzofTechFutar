@@ -14,13 +14,11 @@ void FelhasznaloTarolo::felhasznaloBeolvas()
 {
 	for(auto l : felhasznaloLista){
 		vector<string> f(l.begin(),l.end());
-		//cout << f[0] << " - " << f[1] << " - " << f[2] << endl;
 		string tipus = f[0];
 		string email = f[1];
 		string jelszo = f[2];
-		Felhasznalo felhasznalo= Felhasznalo(tipus,email,jelszo);
-		cout << felhasznalo.kiir();
-		felhasznaloHozzaad(felhasznalo);
+		Felhasznalo felhasz(tipus, email, jelszo);
+		felhasznaloHozzaad(felhasz);
 	}
 
 }
@@ -36,8 +34,9 @@ void FelhasznaloTarolo::felhasznaloFajlbairas()
 	}
 }
 
-void FelhasznaloTarolo::felhasznaloTorles(const Felhasznalo& f)
+void FelhasznaloTarolo::felhasznaloTorles(Felhasznalo f)
 {
+	//felhasznalok.remove(f);
 }
 
 Felhasznalo FelhasznaloTarolo::getFelhasznalo() const
@@ -56,11 +55,12 @@ void FelhasznaloTarolo::etteremListaz(const string& nev, const string& kategoria
 
 void FelhasznaloTarolo::profilModositas(const string& email)
 {
+
 }
 
 Felhasznalo FelhasznaloTarolo::belepes(const string& email, const string& jelszo)
 {
-	for (auto& i : felhasznalok)
+	for (auto i : felhasznalok)
 	{
 		if (i.getEmail() == email)
 		{
@@ -76,10 +76,3 @@ Felhasznalo FelhasznaloTarolo::belepes(const string& email, const string& jelszo
 	}
 }
 
-void etteremListaz(const string& nev, const string& kategoria)
-{
-}
-
-void profilModositas(const string& email)
-{
-}

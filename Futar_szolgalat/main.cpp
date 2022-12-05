@@ -15,7 +15,6 @@ Felhasznalo felhasznalo;
 void vendegNezet() {
 
 	int input = 0;
-	bool belep = false;
 	do
 	{
 
@@ -44,7 +43,6 @@ void vendegNezet() {
 			string jelszo;
 			cin >> jelszo;
 			felhasznalo = tarolo.belepes(email, jelszo);
-			belep = true;
 			input = 4;
 			break;
 		}
@@ -67,6 +65,8 @@ void regvasarloNezet() {
 	{
 		RegVasarlo regvasarlo;
 		regvasarlo.regisztracio(felhasznalo.getEmail(), felhasznalo.getJelszo());
+		regvasarlo.menuListaz();
+		cin >> input;
 		switch (input)
 		{
 		case 1: {
@@ -97,26 +97,20 @@ void regvasarloNezet() {
 }
 
 
-
-
 int main()
 {
 	int input = 0;
 	do
 	{
 		tarolo.felhasznaloBeolvas();
-		list<Felhasznalo> teszt = tarolo.getFelhasznalok();
-		for(auto i : teszt){
-			cout << i.kiir() << endl;
-		}
-		/*vendegNezet();
+		felhasznalo = Felhasznalo();
+		vendegNezet();
+		cin >> input;
 		if (felhasznalo.getTipus() == "regvasarlo")
 		{
 			regvasarloNezet();
-		}*/
-		cin >> input;
-	} while (input != 4);
-
+		}
+	} while (input !=4);
 
 
 }

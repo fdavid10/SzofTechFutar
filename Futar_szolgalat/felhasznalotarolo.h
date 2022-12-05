@@ -16,7 +16,7 @@ public:
     void felhasznaloHozzaad(const Felhasznalo& f);
     void felhasznaloBeolvas();
     void felhasznaloFajlbairas();
-    void felhasznaloTorles(const Felhasznalo& f);
+    void felhasznaloTorles(Felhasznalo f);
     Felhasznalo getFelhasznalo() const;
     list<Felhasznalo> getFelhasznalok() const;
     void etteremListaz(const string& nev, const string& kategoria);
