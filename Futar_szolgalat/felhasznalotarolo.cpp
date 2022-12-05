@@ -14,10 +14,15 @@ void FelhasznaloTarolo::felhasznaloBeolvas()
 {
 	for(auto l : felhasznaloLista){
 		vector<string> f(l.begin(),l.end());
-		cout << f[0] << " - " << f[1] << " - " << f[2] << endl;
-		Felhasznalo felhasznalo(f[0], f[1], f[2]);
+		//cout << f[0] << " - " << f[1] << " - " << f[2] << endl;
+		string tipus = f[0];
+		string email = f[1];
+		string jelszo = f[2];
+		Felhasznalo felhasznalo= Felhasznalo(tipus,email,jelszo);
+		cout << felhasznalo.kiir();
 		felhasznaloHozzaad(felhasznalo);
 	}
+
 }
 
 void FelhasznaloTarolo::felhasznaloFajlbairas()
