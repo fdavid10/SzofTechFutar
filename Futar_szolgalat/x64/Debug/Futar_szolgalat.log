@@ -1,2 +1,18 @@
-﻿  main.cpp
-  Futar_szolgalat.vcxproj -> C:\Users\david\Source\Repos\fdavid10\SzofTechFutar\x64\Debug\Futar_szolgalat.exe
+﻿  etterem.cpp
+  felhasznalo.cpp
+D:\@PE_informatika\Szoftech\SzoftechFutarApp\mukodokepes\Futar_szolgalat\felhasznalo.cpp(11,5): error C2065: 'emailStatic': undeclared identifier
+D:\@PE_informatika\Szoftech\SzoftechFutarApp\mukodokepes\Futar_szolgalat\felhasznalo.cpp(19,5): error C2065: 'emailStatic': undeclared identifier
+D:\@PE_informatika\Szoftech\SzoftechFutarApp\mukodokepes\Futar_szolgalat\felhasznalo.cpp(87,5): error C2065: 'emailStatic': undeclared identifier
+D:\@PE_informatika\Szoftech\SzoftechFutarApp\mukodokepes\Futar_szolgalat\felhasznalo.cpp(101,22): error C2039: 'getEmailStatic': is not a member of 'Felhasznalo'
+D:\@PE_informatika\Szoftech\SzoftechFutarApp\mukodokepes\Futar_szolgalat\felhasznalo.h(11,7): message : see declaration of 'Felhasznalo'
+  felhasznalotarolo.cpp
+  futar.cpp
+  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\filesystem(13): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+  regvasarlo.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\filesystem(13): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+D:\@PE_informatika\Szoftech\SzoftechFutarApp\mukodokepes\Futar_szolgalat\regvasarlo.cpp(147,80): error C2039: 'getEmailStatic': is not a member of 'Felhasznalo'
+D:\@PE_informatika\Szoftech\SzoftechFutarApp\mukodokepes\Futar_szolgalat\felhasznalo.h(11,7): message : see declaration of 'Felhasznalo'
+D:\@PE_informatika\Szoftech\SzoftechFutarApp\mukodokepes\Futar_szolgalat\regvasarlo.cpp(147,94): error C3861: 'getEmailStatic': identifier not found
+  Generating Code...
+D:\@PE_informatika\Szoftech\SzoftechFutarApp\mukodokepes\Futar_szolgalat\felhasznalotarolo.cpp(77): warning C4715: 'FelhasznaloTarolo::belepes': not all control paths return a value

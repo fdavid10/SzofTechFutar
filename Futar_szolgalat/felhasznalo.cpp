@@ -145,6 +145,63 @@ list<list<string>> Felhasznalo::getFajl(const string& fajlNev)
     return fajl;
 }
 
+void Felhasznalo::sorTorol(const char* fajlNev, const string& kulcs) const
+{
+    ifstream inputFalj(fajlNev);
+
+    ofstream outputFajl;
+    outputFajl.open("temp.txt", ios::out);
+
+    string sor;
+
+    while (getline(inputFalj, sor))
+    {
+        string elem;
+        istringstream iss(sor);
+        while (getline(iss, elem, ','))
+        {
+            if (elem == kulcs)
+            {
+                sor = "";
+            }
+        }
+        outputFajl << sor << endl;
+    }
+    outputFajl.close();
+    inputFalj.close();
+
+    remove(fajlNev);
+    rename("temp.txt", fajlNev);
+}
+
+void Felhasznalo::uresEltavolit(const char* fajlNev, const string& kulcs) const
+{
+    sorTorol("ettermek.txt", kulcs);
+
+    ifstream inputFalj(fajlNev);
+
+    ofstream outputFajl;
+    outputFajl.open("temp.txt", ios::out);
+
+    string sor;
+    while (getline(inputFalj, sor))
+    {
+        while (sor.length() == 0)
+        {
+            cout << "csumi" << endl;
+            getline(inputFalj, sor);
+        }
+        outputFajl << sor << endl;
+    }
+
+    inputFalj.close();
+    outputFajl.close();
+
+
+    remove(fajlNev);
+    rename("temp.txt", fajlNev);
+}
+
 /*vector<string> Felhasznalo::sorVisszaAd(const string& fajlNev, const string& keresettSor) const
 {
     list<list<string>> fajl = getFajl(fajlNev);

@@ -30,5 +30,7 @@ public:
 	~Felhasznalo() {};
 
 	static list<list<string>> getFajl(const string& fajlNev);
+	void sorTorol(const char* fajlNev, const string& kulcs) const;
+	void uresEltavolit(const char* fajlNev, const string& kulcs) const;
 	//vector<string> sorVisszaAd(const string& fajlNev, const string& keresettSor) const;
 };
