@@ -28,7 +28,7 @@ public:
 	const string& getTipus() const;
 	virtual string kiir() const;
 	~Felhasznalo() {};
-
+	static string getEmailStatic();
 	static list<list<string>> getFajl(const string& fajlNev);
 	void sorTorol(const char* fajlNev, const string& kulcs) const;
 	void uresEltavolit(const char* fajlNev, const string& kulcs) const;

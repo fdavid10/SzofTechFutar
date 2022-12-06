@@ -5,6 +5,9 @@ Felhasznalo::Felhasznalo()
     jelszo = "";
     email = "";
 }
+
+static string emailStatic; 
+
 Felhasznalo::Felhasznalo(const string& email, const string& jelszo):
     email(email),jelszo(jelszo)
 {
@@ -97,7 +100,7 @@ const string& Felhasznalo::getEmail() const
     return email;
 }
 
-static string emailStatic;
+
  string Felhasznalo::getEmailStatic()
 {
      return emailStatic;
@@ -125,7 +128,7 @@ list<list<string>> Felhasznalo::getFajl(const string& fajlNev)
     ifstream inputFajl(fajlNev);
     if (inputFajl.is_open())
     {
-
+        //cout << "hi";
         string sor;
         while (getline(inputFajl, sor))
         {
@@ -141,7 +144,7 @@ list<list<string>> Felhasznalo::getFajl(const string& fajlNev)
         }
         inputFajl.close();
     }
-    else cout << "Baj az input fajl meg megnyitasakor!";
+   // else cout << "Baj az input fajl meg megnyitasakor!";
     return fajl;
 }
 
